@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hu.barbar.sample.signalSmoother"
+    android:versionCode="1"
+    android:versionName="1.1" 
+>
+
+    <uses-sdk android:minSdkVersion="4" />
+
+    <application
+        android:icon="@drawable/signal_smoother_icon"
+        android:label="@string/app_name"
+        android:debuggable="true"
+    >
+        <activity
+            android:name=".SignapSmootherDemoActivity"
+            android:label="@string/app_name2" 
+            android:screenOrientation="portrait"
+        >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

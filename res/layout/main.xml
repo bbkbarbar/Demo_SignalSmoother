@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	>
+	
+	    
+		<!-- Upper layout (spinner, actual priority array, etc -->
+	    <LinearLayout
+	        android:id="@+main/upperLayout"
+	    	android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+	    >
+			<TableLayout
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"    
+			>        	
+	        <TableRow
+	        	android:orientation="horizontal"
+	        >
+		        <TextView
+		        	android:text="Priority array1:"
+		        	android:layout_width="160dip"
+			   		android:layout_height="wrap_content"	    
+		        />
+		        
+		        <TextView
+		        	android:text="Priority array2:"
+		        	android:layout_width="160dip"
+			   		android:layout_height="wrap_content"	    
+		        />
+		        
+	        </TableRow>
+	        
+	        <TableRow
+	        	android:orientation="horizontal"
+	        >
+		        <Spinner
+		            android:id="@+main/spinner"
+		        	android:layout_width="160dip"
+			   		android:layout_height="wrap_content"
+			   		android:entries="@array/arrays"
+		        	android:prompt="@string/spinner_prompt" 
+		        />
+		        
+		        <Spinner
+		            android:id="@+main/spinner2"
+		        	android:layout_width="160dip"
+			   		android:layout_height="wrap_content"
+			   		android:entries="@array/arrays"
+		        	android:prompt="@string/spinner_prompt2" 
+		        />
+		    </TableRow>
+	        
+	        <TableRow
+	        	android:orientation="horizontal"
+	        >    
+		        <TextView
+		            android:id="@+main/used_pa"
+		        	android:text="Used: priority array: "
+		        	android:layout_width="160dip"
+			   		android:layout_height="wrap_content"	    
+		        />
+		        
+		        <TextView
+		            android:id="@+main/used_pa2"
+		        	android:text="Used: priority array: "
+		        	android:layout_width="160dip"
+			   		android:layout_height="wrap_content"	    
+		        />
+		        
+	        </TableRow>
+	        
+	        
+	        
+	        </TableLayout>
+	        
+			<TextView
+	            android:text=""
+	        	android:layout_width="wrap_content"
+		   		android:layout_height="wrap_content"	    
+	        />
+	    </LinearLayout>
+	 
+	    
+	    <!-- Table -->
+	    <LinearLayout
+	        android:id="@+main/tableLayout"
+	    	android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"    
+	    >
+	    
+		    <!-- 106 dip a harmada fuggolegesen a képernyőnek -->
+		    
+		    <LinearLayout
+		        android:layout_width="wrap_content" 
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical"
+		    >
+		        
+		        <TextView
+		            android:text="\n"
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:text="X: "
+		            style="@style/dataLine"
+		        />
+		        <TextView
+		            android:text="Y: "
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:text="Z: "
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:text=" "
+		            style="@style/dataLine"
+		        />
+		        
+		    </LinearLayout>
+		    
+		    <LinearLayout
+		        android:layout_width="106dip" 
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical"
+		    >
+		    	
+		        <TextView
+		            android:text="Original data:\n"
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:id="@+main/data1_org"
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:id="@+main/data2_org"
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:id="@+main/data3_org"
+		            style="@style/dataLine"
+		        />
+		        
+		        
+		    </LinearLayout>
+		
+		    <LinearLayout
+		        android:layout_width="106dip" 
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical"
+		    >
+		        
+		        <TextView
+		            android:text="Smoothed data:\n"
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:id="@+main/data1_smd"
+		            style="@style/dataLine"
+		        />
+		        <TextView
+		            android:id="@+main/data2_smd"
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:id="@+main/data3_smd"
+		            style="@style/dataLine"
+		        />
+		        
+		    </LinearLayout>
+		    
+		    <LinearLayout
+		        android:layout_width="wrap_content" 
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical"
+		    >
+		        
+		        <TextView
+		            android:text="Recommended threshold:"
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:id="@+main/other1"
+		            style="@style/dataLine"
+		        />
+		        <TextView
+		            android:id="@+main/other2"
+		            style="@style/dataLine"
+		        />
+		        
+		        <TextView
+		            android:id="@+main/other3"
+		            style="@style/dataLine"
+		        />
+		        
+		        
+		    </LinearLayout>
+		</LinearLayout> <!-- end of table -->
+	
+	
+		<!-- MyViews to show original and 1x smoothed datas -->
+	    <LinearLayout
+	        android:id="@+main/layoutOfMyViews1"
+	    	android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"    
+	    >
+			
+			
+			<!-- 160 dip a fele fuggolegesen a képernyőnek -->
+			
+			<LinearLayout
+			    android:id="@+main/layout_myview1_frame" 
+				android:layout_width="160dip"
+				android:layout_height="120dip"
+				android:orientation="vertical"
+			>
+		        
+			    <TextView
+		            android:text="Original datas:"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		        />
+			    
+		        <hu.barbar.sample.signalSmoother.MyView
+		            android:id="@+main/myView1"
+		            android:layout_width="fill_parent"
+			    	android:layout_height="fill_parent"
+		        />
+	        </LinearLayout>
+	        
+			<LinearLayout
+			    android:id="@+main/layout_myview2_frame" 
+				android:layout_width="160dip"
+				android:layout_height="120dip"
+				android:orientation="vertical"
+			>
+		        
+			    <TextView
+		            android:text="1x smoothed datas:"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		        />
+			    
+		        <hu.barbar.sample.signalSmoother.MyView
+		            android:id="@+main/myView2"
+		            android:layout_width="fill_parent"
+			    	android:layout_height="fill_parent"
+		        />
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	    
+	    
+	    <!-- MyViews and TextViews to show 2x smoothed datas -->
+	    <LinearLayout
+	        android:id="@+main/layoutOfMyViews2"
+	    	android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"    
+	    >
+			<LinearLayout
+			    android:id="@+main/layout_myview3_frame"
+			    android:layout_width="160dip"
+		    	android:layout_height="120dip"
+		    	android:orientation="vertical"
+			>
+	
+			    <TextView
+		            android:text="2x smoothed datas:"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		        />	        
+				    
+		        <hu.barbar.sample.signalSmoother.MyView
+		            android:id="@+main/myView3"
+		            android:layout_width="fill_parent"
+			    	android:layout_height="fill_parent"
+		        />
+		        
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:id="@+main/doubleSmoothedValues"
+	            android:layout_width="160dip"
+		    	android:layout_height="wrap_content"
+		    	android:orientation="vertical"
+	        >
+	            <TextView 
+	            	android:text="2x smoothed datas:"
+	            	style="@style/double_smoothed_lines"    
+	            />
+	            
+	            <TextView 
+	            	android:text=" "
+	            	style="@style/double_smoothed_lines"    
+	            />
+	            
+	            <TextView
+	                android:id="@+main/dsmd0"
+	           		style="@style/double_smoothed_lines"   
+	            />
+	            
+	            <TextView
+	                android:id="@+main/dsmd1"
+	           		style="@style/double_smoothed_lines"   
+	            />
+	            
+	            <TextView
+	                android:id="@+main/dsmd2"
+	           		style="@style/double_smoothed_lines"   
+	            />
+	            
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	    
+	    
+	    
+	    <LinearLayout
+	        android:id="@+main/layoutOfGraphs1"
+	    	android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"    
+	    >
+			<LinearLayout
+			    android:id="@+main/layout_graphs1left_frame"
+			    android:layout_width="320dip"
+		    	android:layout_height="320dip"
+		    	android:orientation="vertical"
+		    	android:padding="5px"
+			>
+			
+				    
+		        
+	        </LinearLayout>
+	        
+	        <LinearLayout
+			    android:id="@+main/layout_graphs1right_frame"
+			    android:layout_width="320dip"
+		    	android:layout_height="320dip"
+		    	android:orientation="vertical"
+		    	android:padding="5px"
+			>
+	
+			    
+		        
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	    
+	    
+	    
+	</LinearLayout>
+</ScrollView>
